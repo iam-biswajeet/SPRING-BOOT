@@ -18,6 +18,7 @@ public class Application {
 		UserRepository userRepo=context.getBean(UserRepository.class);
 		System.out.println(userRepo.getClass().getName());
 		
+		
 		/*
 		 * User entity=new User(); entity.setId(104); entity.setName("Bibhuti");
 		 * entity.setMob(6370652014l); entity.setAge(23); entity.setCountry("India");
@@ -44,8 +45,10 @@ public class Application {
 		 * users.forEach(user->System.out.println(user));
 		 */
 		//userRepo.deleteById(101);
-		System.out.println( userRepo.existsById(101));
-		System.out.println(userRepo.count());
+		
+		  System.out.println( userRepo.existsById(101));
+		  System.out.println(userRepo.count());
+		 
 		
 		
 	}
