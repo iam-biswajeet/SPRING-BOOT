@@ -14,7 +14,7 @@ public class User {
 	@Column(name="USER_NAME")
 	private String userName;
 	@Column(name="USER_PHNO")
-	private long Userphno;
+	private long userPhno;
 	@Column(name="USER_AGE")
 	private int userAge;
 	@Column(name="USER_COUNTRY")
@@ -32,10 +32,10 @@ public class User {
 		this.userName = userName;
 	}
 	public long getUserphno() {
-		return Userphno;
+		return userPhno;
 	}
 	public void setUserphno(long userphno) {
-		Userphno = userphno;
+		userPhno = userphno;
 	}
 	public int getUserAge() {
 		return userAge;
@@ -51,7 +51,7 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", userName=" + userName + ", Userphno=" + Userphno + ", userAge=" + userAge
+		return "User [userId=" + userId + ", userName=" + userName + ", Userphno=" + userPhno + ", userAge=" + userAge
 				+ ", userCountry=" + userCountry + "]";
 	}
 	

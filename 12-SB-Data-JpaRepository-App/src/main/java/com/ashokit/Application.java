@@ -1,5 +1,6 @@
 package com.ashokit;
 
+import java.util.Arrays;
 import java.util.List;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,17 +18,22 @@ public class Application {
 		//List<User> findAll = userRepo.findAll();
 		//List<User> findAll = userRepo.findAll(Sort.by("userId").descending());
 		//List<User> findAll = userRepo.findAll(PageRequest.of(0, 3)).getContent();
-		User entity=new User();
-		entity.setUserCountry("India");
-		Example<User> example=Example.of(entity);
-		System.out.println(example);
-		System.out.println("=======================================");
-		List<User> findAll = userRepo.findAll(example);
-		for(User user:findAll) {
-			System.out.println(user);
-		}
+		/*
+		 * User entity=new User(); entity.setUserCountry("India"); Example<User>
+		 * example=Example.of(entity); System.out.println(example);
+		 * System.out.println("======================================="); List<User>
+		 * findAll = userRepo.findAll(example); for(User user:findAll) {
+		 * System.out.println(user); }
+		 */
+		//List<User> findAll=userRepo.findByUserAge(23);
+		//List<User> findAll=userRepo.findByUserCountry("India");
+		//List<User> findAll=userRepo.findByUserAgeAndUserCountry(23,"India");
+		//List<User> findAll=userRepo.findByUserAgeIn(Arrays.asList(22,23));
 		
-		//findAll.forEach(System.out::println);
+		List<User> findAll=userRepo.getUsers("Raja", "Rama");
+		
+		
+		findAll.forEach(System.out::println);
 		System.out.println("=========================================");
 		context.close();
 	}
