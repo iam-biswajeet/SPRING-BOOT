@@ -19,7 +19,7 @@ public class Application {
 		UserRepository userRepo = context.getBean(UserRepository.class);
 		//List<User> findAll = userRepo.findAll();
 		//List<User> findAll = userRepo.findAll(Sort.by("userId").descending());
-		List<User> findAll = userRepo.findAll(PageRequest.of(0, 2)).getContent();
+		//List<User> findAll = userRepo.findAll(PageRequest.of(0, 2)).getContent();
 		/*
 		 * User entity=new User(); entity.setUserCountry("India"); Example<User>
 		 * example=Example.of(entity); System.out.println(example);
@@ -30,7 +30,12 @@ public class Application {
 		 * System.out.println(user); }
 		 */
 		
-		findAll.forEach(System.out::println);
+		//findAll.forEach(System.out::println);
+		User entity=new User();
+		entity.setUserName("Kl Rahul");
+		entity.setUserAge(34);
+		entity.setUserCountry("India");
+		userRepo.save(entity);
 		System.out.println("=========================================");
 		context.close();
 	}

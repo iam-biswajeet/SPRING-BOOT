@@ -30,10 +30,17 @@ public class Application {
 		//List<User> findAll=userRepo.findByUserAgeAndUserCountry(23,"India");
 		//List<User> findAll=userRepo.findByUserAgeIn(Arrays.asList(22,23));
 		
-		List<User> findAll=userRepo.getUsers("Raja", "Rama");
-		
-		
-		findAll.forEach(System.out::println);
+		/*
+		 * List<User> findAll=userRepo.getUsers("Raja", "Rama");
+		 * 
+		 * 
+		 * findAll.forEach(System.out::println);
+		 */
+		User entity=new User();
+		entity.setUserName("Virat");
+		entity.setUserAge(32);
+		entity.setUserCountry("India");
+		userRepo.save(entity);
 		System.out.println("=========================================");
 		context.close();
 	}
